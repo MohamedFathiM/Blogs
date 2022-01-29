@@ -4,8 +4,8 @@ A transformation layer that sits between your Eloquent models and the JSON respo
 
 # First Time Using It:
 
-At the first time when I am using the api resource , I confuced about the difference between the two classes ,
-you will find in the apiResource of laravel (Resource , Collection) , Ex : PostReource and PostCollection .
+The first time I am using the api resource , I was confused about the difference between the two classes ,
+you will find it in the apiResource of laravel (Resource , Collection) , Ex : PostReource and PostCollection .
 
 ### Larave Api Resource has two classes you can simply make them using artisan like that .
 
@@ -29,19 +29,19 @@ name of class with suffix collection
 
 this command create class in `App\Http\Resources` extends `ResourceCollection`
 
-so , what is the different between them ?
+so , what is the difference between them ?
 
 | Resource Class                            | Collection Class                          |
 | ----------------------------------------- | ----------------------------------------- |
 | extends `JsonResource`                    | extends `ResourceCollection`              |
 | mapping for single model instance `$post` | mapping for collection of model `$posts`  |
 | `new PostResource(Post::find(1));`        | `new PostCollection(Post::paginate())`    |
-| cannot paginate data ,                    | can using paginate and return meta data.. |
-| doesn't suppot additional meta data       | with the collection .                     |
+| cannot paginate data ,                    | can us paginate and return metadata..     |
+| doesn't support additional metadata       | with the collection .                     |
 
 # Tutorial :
 
-Suppose you have new laravel project and make `Post` model and `posts_table` migration
+Suppose you have a new laravel project and make `Post` model and `posts_table` migration
 has fields `title,description,user_id` ..
 
 ### Create `PostResource` and `PostCollection` :
@@ -88,7 +88,7 @@ php artisan make:resource Users/UserResource
         ];
     }
 ```
-### Now we ready to return response posts collection :
+### Now we are ready to return response posts collection :
 - Add this method in `routes/web.php` to quick test
 ```php
 Route::get("test", function () {
