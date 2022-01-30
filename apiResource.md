@@ -77,7 +77,7 @@ php artisan make:resource Users/UserResource
         ];
     }
 ```
-- return to `posts` and edit `PostResource` `toArray` :
+- return to `posts` and edit `PostCollection` `toArray` :
 ```php
  public function toArray($request)
     {
